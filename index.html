@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>NeoHCMED - Extrator de Exames</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5.0.5/dist/tesseract.min.js"></script>
+</head>
+<body>
+  <h1>NeoHCMED - Extrator de Exames</h1>
+  <p>Carregue um PDF ou cole o texto abaixo para extrair exames.</p>
+  <input type="file" id="pdfFile" accept="application/pdf">
+  <textarea id="inputText" rows="10" cols="80" placeholder="Cole aqui o texto bruto do exame"></textarea>
+  <button onclick="processText()">Extrair</button>
+  <pre id="output"></pre>
+
+<script>
+async function processText() {
+  const text = document.getElementById('inputText').value;
+  document.getElementById('output').textContent = 'Texto processado:\n' + text;
+}
+</script>
+</body>
+</html>
